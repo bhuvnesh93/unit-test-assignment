@@ -1,0 +1,53 @@
+{
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.5",
+    "@babel/preset-env": "^7.10.4",
+    "babel-jest": "^26.1.0",
+    "eslint": "^7.5.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "jest": "^26.1.0",
+    "jest-junit": "^11.1.0",
+    "prettier": "^2.0.5"
+  },
+  "jest": {
+    "setupFiles": [
+      "./_setup_/testSetup.js"
+    ],
+    "reporters": [
+      "default",
+      "jest-junit"
+    ],
+    "collectCoverage": true,
+    "coverageDirectory": "./reports/coverage",
+    "collectCoverageFrom": [
+      "**/src/**/*.{js,jsx}"
+    ],
+    "globals": {
+      "window": {
+        "confirm": {}
+      }
+    }
+  },
+  "jest-junit": {
+    "outputDirectory": "reports/junit"
+  },
+  "jspcd": {
+    "threshold": 5,
+    "reporters": [
+      "html",
+      "console",
+      "badge"
+    ],
+    "ignore": [
+      "**/__snapshots__/**"
+    ],
+    "absolute": true,
+    "path": "src",
+    "output": "./reports/jscpd",
+    "blame": true
+  }
+}
